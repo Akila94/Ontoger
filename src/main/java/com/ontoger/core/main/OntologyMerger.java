@@ -21,12 +21,6 @@ public class OntologyMerger {
         return ontology;
     }
 
-    //Read a class by name
-    public OWLClass getClassByName(String name) {
-
-    }
-
-
     //reading sub classes of a super class
     public void readSubClasses(OWLOntology ontology) {
 
