@@ -1,4 +1,10 @@
 .idea
 target
+meteor-files
+opennlp-tools-1.5.0
+stanford-corenlp-2012-01-08
+WordNet-JWI
+
 
 *.iml
+*.txt
