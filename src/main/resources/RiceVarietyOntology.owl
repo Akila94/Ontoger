@@ -1,0 +1,574 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/demo-user/ontologies/2015/10/untitled-ontology-29#"
+     xml:base="http://www.semanticweb.org/demo-user/ontologies/2015/10/untitled-ontology-29"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:RiceOntology="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAttribute">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isAttributeOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Physical_Characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasBredFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasBredFrom">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isBreedingStationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#BreedingStation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasPedigreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasPedigreeFrom">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isPedigreeOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationFor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Recommendation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationToRegion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationToRegion">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationFor"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedRegionFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#RegionRecommendation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationToSoil -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationToSoil">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationFor"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedSoilFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#SoilRecommendation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasResistanceTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasResistanceTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isResistedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasToleranceTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasToleranceTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isToleratedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Aboitic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasVariety -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasVariety">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isVarietyOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Crop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isAttributeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isAttributeOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Physical_Characteristic"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isBreedingStationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isBreedingStationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#BreedingStation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isPedigreeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isPedigreeOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Recommendation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedRegionFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedRegionFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#RegionRecommendation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedSoilFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedSoilFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isRecommendedFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#SoilRecommendation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isResistedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isResistedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Disease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isToleratedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isToleratedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Aboitic"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isVarietyOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#isVarietyOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Crop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAbbreviation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAbbreviation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAttributeAbbreviation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAttributeAbbreviation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAbbreviation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Physical_Characteristic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasBreedingStationAbbreviation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasBreedingStationAbbreviation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAbbreviation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#BreedingStation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasDiseaseAbbreviation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasDiseaseAbbreviation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAbbreviation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Disease"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasHigherYieldRecord -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasHigherYieldRecord">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>Tons per hectares (t/ha)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxHarvestDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxHarvestDuration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>In months
+</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxMaturityDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxMaturityDuration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinHarvestDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinHarvestDuration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>in months</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinMaturityDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinMaturityDuration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationAbbreviation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationAbbreviation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasAbbreviation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Recommendation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRegionAbbrivation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRegionAbbrivation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasRecommendationAbbreviation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#RegionRecommendation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasReleasedYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasReleasedYear">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Aboitic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Aboitic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#BreedingStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#BreedingStation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Crop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Crop"/>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Disease"/>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#FiveToSixMonths -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#FiveToSixMonths">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#HybridVariety"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">6.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#FourToFourAndHalfMonths -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#FourToFourAndHalfMonths">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#HybridVariety"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.5</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#HybridVariety -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#HybridVariety">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasBredFrom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#BreedingStation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasPedigreeFrom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Physical_Characteristic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Physical_Characteristic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Recommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Recommendation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#RegionRecommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#RegionRecommendation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Recommendation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#SoilRecommendation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#SoilRecommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#SoilRecommendation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Recommendation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#ThreeAndHalfMonths -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#ThreeAndHalfMonths">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#HybridVariety"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.5</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.5</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#ThreeMonths -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#ThreeMonths">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#HybridVariety"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#TwoAndHalfMonths -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#TwoAndHalfMonths">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#HybridVariety"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMaxHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.5</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#hasMinHarvestDuration"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.5</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Variety">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Aboitic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#BreedingStation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Crop"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Disease"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#HybridVariety"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Physical_Characteristic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#Recommendation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#FiveToSixMonths"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#FourToFourAndHalfMonths"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#ThreeAndHalfMonths"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#ThreeMonths"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/demo-user/ontologies/2015/10/RiceOntology#TwoAndHalfMonths"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

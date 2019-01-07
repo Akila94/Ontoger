@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed"
+     xml:base="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:Rice_weed="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed">
+        <rdfs:comment>This ontology represents the knowledge about WEED in the RICE domain</rdfs:comment>
+        <rdfs:comment>Author:- Waruni Hewage
+SC/2011/8079</rdfs:comment>
+        <rdfs:comment>This ontology has designed accoding to the information provided by  Department of Agriculture, sriLanka,
+http://www.doa.gov.lk/index.php/en/crop-recommendations/819</rdfs:comment>
+        <owl:versionInfo>Rice_weed_V1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasControlMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasControlMethod">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isControlMethodOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlMethod"/>
+        <rdfs:comment>Every Weed variety has several control methods under the categories preventive, cultural, mechanical, chemical, manual and biological</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasControlPeriod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasControlPeriod">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isControlPeriodOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlPeriod"/>
+        <rdfs:comment>There is a common control period for every weed variety. Further details are needed to be collected for specify the control period for each weed instance separately.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasThreat -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasThreat">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isThreatOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Crop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Threat"/>
+        <rdfs:comment>Only consider the threat of weed.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isControlMethodOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isControlMethodOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlMethod"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isControlPeriodOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isControlPeriodOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlPeriod"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isThreatOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#isThreatOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Threat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Crop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasCommonName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasCommonName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Herbicide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Every herbicide has a common name except the trade name</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasRate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Herbicide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Rate of application per Hectare
+(kg or l)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#BiologicalControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#BiologicalControlMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#IWP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#BroadLeaves -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#BroadLeaves">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed"/>
+        <rdfs:comment>More than 20 species</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#BroadleaveHerbicide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#BroadleaveHerbicide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Herbicide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Chemical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Chemical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#IWP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlPeriod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlPeriod">
+        <rdfs:comment>Describes which time period is suitable for the control of weed growth</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Crop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Crop">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasThreat"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Threat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>I have considered &quot;Rice&quot; as the crop .Can be extended by adding more crop instances</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#CulturalControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#CulturalControlMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#IWP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Fern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Fern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed"/>
+        <rdfs:comment>Number of species haven&apos;t specified yet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Grass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Grass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed"/>
+        <rdfs:comment>More than 70 species.
+Grasses are considered as the major weed group in rice fields in Sri Lanka.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#GrassHerbicide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#GrassHerbicide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Herbicide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Herbicide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Herbicide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Chemical"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasCommonName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasRate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#IWP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#IWP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlMethod"/>
+        <rdfs:comment>Integrated Weed Control Practices (IWP)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#InsectPest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#InsectPest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Threat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ManualControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ManualControlMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#IWP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#MechanicalControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#MechanicalControlMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#IWP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#OneShotHerbicide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#OneShotHerbicide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Herbicide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Other -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Other">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlMethod"/>
+        <rdfs:comment>Need to collect data for other control Methods except IWP method</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#PreventiveControlMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#PreventiveControlMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#IWP"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Sedge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Sedge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed"/>
+        <rdfs:comment>More than 50 species</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#SedgeHerbicide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#SedgeHerbicide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Herbicide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Threat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Threat">
+        <rdfs:comment>Threat for crop can be categorized as Desease, InsectPest and Weed.Here i have only considered weed</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Weed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Threat"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasControlMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#hasControlPeriod"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ControlPeriod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#BiologicalControlMethod"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Chemical"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#CulturalControlMethod"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#ManualControlMethod"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#MechanicalControlMethod"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#PreventiveControlMethod"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#BroadLeaves"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Fern"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Grass"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/waruni/ontologies/2015/9/Rice_weed#Sedge"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
