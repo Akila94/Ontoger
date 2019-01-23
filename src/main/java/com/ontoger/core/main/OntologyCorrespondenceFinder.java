@@ -57,11 +57,14 @@ public class OntologyCorrespondenceFinder {
         for (OWLClass sClass : sourceClasses) {
             for (OWLClass dClass : destClasses) {
                 if (sClass.getIRI().getShortForm().equalsIgnoreCase(dClass.getIRI().getShortForm())) {
-                    System.out.println("Class" + sClass + "is same as " + dClass);
                     //Add code to add these classes to a database
                 }
             }
         }
+    }
+
+    public void matchSimilarityBySynonym(OWLOntology sourceOntology, OWLOntology destOntology) {
+
     }
 
 }

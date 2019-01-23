@@ -5,13 +5,19 @@ import org.apache.commons.io.FileUtils;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 public class OntologyMerger {
 
+    //Import ontology to program
     public OWLOntology getOntology(String ontologyName) throws OWLOntologyCreationException {
         //Get both ontologies to the program.
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
@@ -30,6 +36,27 @@ public class OntologyMerger {
                         " extends " + ((OWLClass) subClassOfAxiom.getSuperClass()).getIRI().getShortForm());
             }
         }
+    }
+
+    //Decide what is the source ontology
+    public List<OWLOntology> decideSourceOntology(OWLOntology ontology1, OWLOntology ontology2) {
+        OWLOntology sourceOntology;
+        OWLOntology destOntology;
+
+        Set<OWLObjectProperty> opsOfOntology1 = ontology1.getObjectPropertiesInSignature();
+        Set<OWLObjectProperty> opsOfOntology2 = ontology2.getObjectPropertiesInSignature();
+        if (opsOfOntology1.size() > opsOfOntology2.size()) {
+            sourceOntology = ontology2;
+            destOntology = ontology1;
+        } else {
+            sourceOntology = ontology1;
+            destOntology = ontology2;
+        }
+
+        List<OWLOntology> ontologies = new ArrayList<>();
+        ontologies.add(sourceOntology);
+        ontologies.add(destOntology);
+        return ontologies;
     }
 
     public static void main(String[] args) throws OWLOntologyCreationException {
