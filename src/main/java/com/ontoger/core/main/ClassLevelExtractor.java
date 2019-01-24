@@ -3,6 +3,11 @@ package com.ontoger.core.main;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ListMultimap;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -87,13 +92,27 @@ public class ClassLevelExtractor {
     }
 
     //All concepts are extracted with their relative level successfully, tested and working fine.
-    public JSONObject getClassesWithLevels(String ontologyName) {
+    public JsonObject getClassesWithLevels(String ontologyName) {
         OntModel model = ModelFactory.createOntologyModel();
         readOntology(CommonConstants.ONTOLOGY_FILE_PATH + ontologyName, model);
         traverseStart(model, null);
 
         //Converting the
         Map classesMap = classesWithLevel.asMap();
-        
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        Gson gsonObject = gsonBuilder.create();
+        String classesJson = gsonObject.toJson(classesMap);
+
+        JsonParser parser = new JsonParser();
+        JsonObject classesJsonObj = (JsonObject) parser.parse(classesJson);
+        return classesJsonObj;
     }
+
+    public static void main(String[] args) {
+        ClassLevelExtractor extractor = new ClassLevelExtractor();
+        JsonObject s = extractor.getClassesWithLevels("testOntology1.owl");
+        JsonArray a = s.getAsJsonArray(Integer.toString(0));
+        System.out.println(a);
+    }
+
 }

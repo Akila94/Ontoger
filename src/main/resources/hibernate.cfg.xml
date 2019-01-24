@@ -23,6 +23,10 @@
 
 		<!-- Set the current session context -->
 		<property name="current_session_context_class">thread</property>
+
+        <!-- Set batch size -->
+        <property name="jdbc.batch_size">20</property>
+        <property name="cache.use_second_level_cache">false</property>
  
     </session-factory>
 

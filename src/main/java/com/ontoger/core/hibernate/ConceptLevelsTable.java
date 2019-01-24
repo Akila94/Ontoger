@@ -26,8 +26,7 @@ public class ConceptLevelsTable {
 
     }
 
-    public ConceptLevelsTable(int id, int level, String name) {
-        this.id = id;
+    public ConceptLevelsTable(int level, String name) {
         this.level = level;
         this.name = name;
     }
