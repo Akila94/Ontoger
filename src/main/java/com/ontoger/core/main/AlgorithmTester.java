@@ -21,6 +21,7 @@ public class AlgorithmTester {
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         OntologyMerger merger = new OntologyMerger();
         OntologyCorrespondenceFinder matcher = new OntologyCorrespondenceFinder(manager);
+        ClassLevelExtractor extractor = new ClassLevelExtractor();
 
         try {
             sourceOntology = merger.getOntology("TestOntology1.owl");
