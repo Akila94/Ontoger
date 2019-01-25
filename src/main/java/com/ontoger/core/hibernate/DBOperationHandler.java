@@ -3,12 +3,18 @@ package com.ontoger.core.hibernate;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.ontoger.core.main.ClassLevelExtractor;
+import com.ontoger.exceptions.NoResultsReturnedException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
+/**
+ * This class handles all the database operations happen in this application.
+ * TESTED AND WORKING FINE
+ */
 public class DBOperationHandler {
 
     Logger log = LoggerFactory.getLogger(DBOperationHandler.class);
@@ -19,11 +25,10 @@ public class DBOperationHandler {
     public void writeClassesWithLevelsToDB() {
         JsonObject classes = extractor.getClassesWithLevels("weed.owl");
         Session session = factory.getCurrentSession();
-        log.info("Beginning transaction...");
-        Transaction tx = session.beginTransaction();
-        log.info("Transaction began.");
 
         try {
+            log.info("Beginning transaction...");
+            session.beginTransaction();
             for (int i = 0; i < classes.size(); i++) {
                 JsonArray array = classes.getAsJsonArray(Integer.toString(i));
                 for (int j = 0; j < array.size(); j++) {
@@ -40,7 +45,7 @@ public class DBOperationHandler {
                 }
             }
             log.info("Committing transaction...");
-            tx.commit();
+            session.getTransaction().commit();
             session.close();
             log.info("Transaction committed succssfully!!!");
         } finally{
@@ -48,8 +53,23 @@ public class DBOperationHandler {
         }
     }
 
-    public static void main (String[] args){
-        DBOperationHandler handler = new DBOperationHandler();
-        handler.writeClassesWithLevelsToDB();
+    public List<String> getClassesByLevelFromDB(int level) {
+        factory = SessionInitializer.getSessionFactoryForClass(ConceptLevelsTable.class);
+        Session session = factory.getCurrentSession();
+
+        try {
+            log.info("Beginning transaction...");
+            session.beginTransaction();
+            String query = "select t.name from ConceptLevelsTable t where t.level=:level";
+            List<String> result = session.createQuery(query).setParameter("level", level).list();
+            if (result == null) {
+                log.error("Query didn't return any records. Please add some data before querying. Exiting...");
+                throw new NoResultsReturnedException("Table is empty or no matches for query.");
+            }
+            session.getTransaction().commit();
+            return result;
+        } finally {
+            factory.close();
+        }
     }
 }
