@@ -1,6 +1,5 @@
 package com.ontoger.core.main;
 
-import javafx.beans.property.ObjectProperty;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -16,7 +15,6 @@ import org.semanticweb.owlapi.util.OWLEntityRenamer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 public class ApplicationExecuter {

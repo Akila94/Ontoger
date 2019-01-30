@@ -1,6 +1,5 @@
 package com.ontoger.core.main;
 
-import com.ontoger.core.constants.CommonConstants;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;

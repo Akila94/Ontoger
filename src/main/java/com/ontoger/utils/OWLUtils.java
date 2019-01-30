@@ -23,9 +23,8 @@ public class OWLUtils {
         }
         if (owlClass == null) {
             log.error("The specified OWL class doesn't exist in this ontology.");
-            throw new NoSuchOWLClassFoundException("No classs found in thie ontology.");
+            throw new NoSuchOWLClassFoundException("No classs found in this ontology.");
         }
         return owlClass;
     }
-
 }
