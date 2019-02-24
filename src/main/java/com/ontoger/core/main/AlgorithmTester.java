@@ -1,10 +1,13 @@
 package com.ontoger.core.main;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import uk.ac.manchester.cs.owlapi.modularity.ModuleType;
+import uk.ac.manchester.cs.owlapi.modularity.SyntacticLocalityModuleExtractor;
 
 import java.util.List;
 import java.util.Set;
@@ -38,11 +41,11 @@ public class AlgorithmTester {
             noOfClassesInSource = sClasses.size();
             noOfClassesInDest = dClasses.size();
 
-            for (int sourceClass = 0; sourceClass < noOfClassesInSource; sourceClass++) {
-                for (int destClass = 0; destClass < noOfClassesInDest; destClass++) {
-                    
-                }
-            }
+//            for (int sourceClass = 0; sourceClass < noOfClassesInSource; sourceClass++) {
+//                for (int destClass = 0; destClass < noOfClassesInDest; destClass++) {
+//                    //Add stuff
+//                }
+//            }
 
         } catch (OWLOntologyCreationException e) {
             e.printStackTrace();

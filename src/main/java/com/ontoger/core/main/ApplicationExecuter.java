@@ -41,13 +41,13 @@ public class ApplicationExecuter {
 //        System.out.println("Now, the domain of this op:" + opl.get(0) + " is : " + ce1);
         System.out.println("Now, the range of this op:" + opl.get(0) + " is : " + ce);
 
-        IRI ontology1IRI = ontology.getOntologyID().getOntologyIRI().get();
+        IRI ontology1IRI = ontology.getOntologyID().getOntologyIRI();
 
         //Lets place this op's range in a concept in the other ontology
         OWLOntology ontology2 = ontologyList.get(1);
         manager.addAxiom(ontology2, opra.get(0));
 
-        IRI ontology2IRI = ontology2.getOntologyID().getOntologyIRI().get();
+        IRI ontology2IRI = ontology2.getOntologyID().getOntologyIRI();
 
         Set<OWLObjectProperty> ops1 = ontology2.getObjectPropertiesInSignature();
         List<OWLObjectPropertyExpression> opl1 = new ArrayList<OWLObjectPropertyExpression>(ops1);
