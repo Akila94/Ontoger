@@ -89,27 +89,30 @@ public class ClassLevelExtractor {
     }
 
     //All concepts are extracted with their relative level successfully, tested and working fine.
-    public JsonObject getClassesWithLevels(String ontologyName) {
+    public HashMultimap<Integer, String> getClassesWithLevels(String ontologyName1, String ontologyName2) {
         OntModel model = ModelFactory.createOntologyModel();
-        readOntology(CommonConstants.ONTOLOGY_FILE_PATH + ontologyName, model);
+        readOntology(CommonConstants.ONTOLOGY_FILE_PATH + ontologyName1, model);
+        traverseStart(model, null);
+        readOntology(CommonConstants.ONTOLOGY_FILE_PATH + ontologyName2, model);
         traverseStart(model, null);
 
         //Converting the
-        Map classesMap = classesWithLevel.asMap();
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        Gson gsonObject = gsonBuilder.create();
-        String classesJson = gsonObject.toJson(classesMap);
-
-        JsonParser parser = new JsonParser();
-        JsonObject classesJsonObj = (JsonObject) parser.parse(classesJson);
-        return classesJsonObj;
+//        Map classesMap = classesWithLevel.asMap();
+//        GsonBuilder gsonBuilder = new GsonBuilder();
+//        Gson gsonObject = gsonBuilder.create();
+//        String classesJson = gsonObject.toJson(classesMap);
+//
+//        JsonParser parser = new JsonParser();
+//        JsonObject classesJsonObj = (JsonObject) parser.parse(classesJson);
+//        return classesJsonObj;
+        return classesWithLevel;
     }
 
-    public static void main(String[] args) {
-        ClassLevelExtractor extractor = new ClassLevelExtractor();
-        JsonObject s = extractor.getClassesWithLevels("testOntology1.owl");
-        JsonArray a = s.getAsJsonArray(Integer.toString(0));
-        System.out.println(a);
-    }
+//    public static void main(String[] args) {
+//        ClassLevelExtractor extractor = new ClassLevelExtractor();
+//        JsonObject s = extractor.getClassesWithLevels("testOnto2V1.owl");
+//        JsonArray a = s.getAsJsonArray(Integer.toString(0));
+//        System.out.println(a);
+//    }
 
 }

@@ -43,9 +43,9 @@ public class OntologyMerger {
         OWLOntology sourceOntology;
         OWLOntology destOntology;
 
-        Set<OWLObjectProperty> opsOfOntology1 = ontology1.getObjectPropertiesInSignature();
-        Set<OWLObjectProperty> opsOfOntology2 = ontology2.getObjectPropertiesInSignature();
-        if (opsOfOntology1.size() > opsOfOntology2.size()) {
+        Set<OWLClass> classesOfOntology1 = ontology1.getClassesInSignature();
+        Set<OWLClass> classesOfOntology2 = ontology2.getClassesInSignature();
+        if (classesOfOntology1.size() > classesOfOntology2.size()) {
             sourceOntology = ontology2;
             destOntology = ontology1;
         } else {
