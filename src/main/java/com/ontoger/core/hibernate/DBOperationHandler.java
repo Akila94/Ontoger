@@ -6,10 +6,9 @@ import com.ontoger.core.main.ClassLevelExtractor;
 import com.ontoger.exceptions.NoResultsReturnedException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * This class handles all the database operations happen in this application.
@@ -17,7 +16,7 @@ import java.util.List;
  */
 public class DBOperationHandler {
 
-    Logger log = LoggerFactory.getLogger(DBOperationHandler.class);
+    Logger log = Logger.getLogger(DBOperationHandler.class.getName());
 
     SessionFactory factory = SessionInitializer.getSessionFactoryForClass(ConceptLevelsTable.class);
     ClassLevelExtractor extractor = new ClassLevelExtractor();
@@ -63,7 +62,7 @@ public class DBOperationHandler {
             String query = "select t.name from ConceptLevelsTable t where t.level=:level";
             List<String> result = session.createQuery(query).setParameter("level", level).list();
             if (result == null) {
-                log.error("Query didn't return any records. Please add some data before querying. Exiting...");
+                log.severe("Query didn't return any records. Please add some data before querying. Exiting...");
                 throw new NoResultsReturnedException("Table is empty or no matches for query.");
             }
             session.getTransaction().commit();

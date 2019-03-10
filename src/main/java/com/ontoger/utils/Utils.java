@@ -1,19 +1,17 @@
 package com.ontoger.utils;
 
 import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Iterables;
 import org.semanticweb.owlapi.model.OWLOntology;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map.Entry;
+import java.util.logging.Logger;
 
 public class Utils {
 
-    static Logger log = LoggerFactory.getLogger(Utils.class);
+    static Logger log = Logger.getLogger(Utils.class.getName());
 
     public static ArrayList<String> getFilteredClasses(int level, OWLOntology ontology, HashMultimap<Integer,
             String> classes) {
@@ -32,7 +30,7 @@ public class Utils {
                 }
             }
         } catch (NullPointerException e) {
-            log.warn("No classes exist in level " + level + "in ontology " + ontologyIRI + ".");
+            log.warning("No classes exist in level " + level + "in ontology " + ontologyIRI + ".");
             throw new NullPointerException("No Classes exist for level " + level + "in ontology " + ontologyIRI + ".");
         }
         return list;

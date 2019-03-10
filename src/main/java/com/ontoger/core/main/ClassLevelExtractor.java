@@ -10,8 +10,6 @@ import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.ontoger.core.constants.CommonConstants;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * This class reads the whole ontology with its class levels.
@@ -28,7 +27,8 @@ import java.util.Map;
  */
 public class ClassLevelExtractor {
 
-    private Logger log = LoggerFactory.getLogger(ClassLevelExtractor.class);
+    Logger log = Logger.getLogger(ClassLevelExtractor.class.getName());
+
     private List ontClasses;
     private HashMultimap<Integer, String> classesWithLevel = HashMultimap.create();
 
@@ -42,22 +42,22 @@ public class ClassLevelExtractor {
             log.info("Getting all concepts to a list");
             ontClasses = model.listClasses().toList();
             if (ontClasses.isEmpty()) {
-                log.warn("Returning as no classes found.");
+                log.warning("Returning as no classes found.");
                 return;
             }
         } catch (IOException e) {
-            log.error("Couldn't import the ontology." + e.getMessage());
+            log.severe("Couldn't import the ontology." + e.getMessage());
         }
     }
 
     //Recurse down to subclasses starting from a class
     private void traverse(OntClass oc, List<OntClass> occurs, int depth) {
         if (oc == null) {
-            log.warn("Returning null as no ListMultimap.");
+            log.warning("Returning null as no ListMultimap.");
             return;
         }
         if (oc.getLocalName() == null || oc.getLocalName().equals("Nothing")) {
-            log.warn("Returning null class name is null or class is Nothing.");
+            log.warning("Returning null class name is null or class is Nothing.");
             return;
         }
 
