@@ -1,7 +1,5 @@
 package com.ontoger.core.hibernate;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.ontoger.core.main.ClassLevelExtractor;
 import com.ontoger.exceptions.NoResultsReturnedException;
 import org.hibernate.Session;

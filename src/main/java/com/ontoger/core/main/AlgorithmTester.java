@@ -2,7 +2,6 @@ package com.ontoger.core.main;
 
 import com.google.common.collect.HashMultimap;
 import com.ontoger.core.constants.CommonConstants;
-import com.ontoger.utils.OWLUtils;
 import com.ontoger.utils.Utils;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLClass;

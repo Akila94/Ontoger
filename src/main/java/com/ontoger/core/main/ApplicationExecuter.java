@@ -64,7 +64,6 @@ public class ApplicationExecuter {
         manager.applyChanges(changes);
 
 
-
         List<OWLObjectPropertyRangeAxiom> opda1 = new ArrayList<>(domainAxiom1);
         OWLClassExpression ce2 = opda1.get(0).getRange();
         System.out.println("Range of op " + opl1.get(0) + "Now : " + ce2);

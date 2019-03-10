@@ -17,7 +17,7 @@ public class DataMuseAPI {
     /**
      * This method checks whether the first string is a synonym, hypernym, hyponym, meronym, comprises, or part-of
      * the other string provided according to the "parameter" provided.
-     *
+     * <p>
      * Parameter Types
      * ================
      * Synonym: syn
@@ -26,8 +26,8 @@ public class DataMuseAPI {
      * Comprises: com
      * Part-of: par
      *
-     * @param concept1 Name of the concept of Source Ontology
-     * @param concept2 Name of the concept of Destination Ontology
+     * @param concept1  Name of the concept of Source Ontology
+     * @param concept2  Name of the concept of Destination Ontology
      * @param parameter Type of the similarity need to check
      * @return Returns true is it is a match, return false is no match or null response
      * @throws IOException An Exception is thrown if connection errors happen

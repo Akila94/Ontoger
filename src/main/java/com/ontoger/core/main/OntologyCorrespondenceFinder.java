@@ -24,7 +24,7 @@ public class OntologyCorrespondenceFinder {
 
     //Should provide the names of the ontologies to find correspondences.
     public List<OWLOntology> loadOWLOntologies(String sourceOntology,
-                                              String destOntology) {
+                                               String destOntology) {
         List<OWLOntology> ontologyList = new ArrayList<>();
         try {
             ontologyList.add(ontologyManager.loadOntologyFromOntologyDocument(FileUtils.getFile(CommonConstants

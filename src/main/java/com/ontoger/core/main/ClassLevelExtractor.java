@@ -1,11 +1,6 @@
 package com.ontoger.core.main;
 
 import com.google.common.collect.HashMultimap;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -17,7 +12,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Logger;
 
 /**
@@ -64,7 +58,7 @@ public class ClassLevelExtractor {
         classesWithLevel.put(depth, oc.toString());
 
         if (oc.canAs(OntClass.class) && !occurs.contains(oc)) {
-            for (Iterator<OntClass> i = oc.listSubClasses(true); i.hasNext();) {
+            for (Iterator<OntClass> i = oc.listSubClasses(true); i.hasNext(); ) {
                 OntClass subClass = i.next();
                 occurs.add(oc);
                 traverse(subClass, occurs, depth + 1);

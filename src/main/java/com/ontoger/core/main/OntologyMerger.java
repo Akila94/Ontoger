@@ -5,7 +5,6 @@ import org.apache.commons.io.FileUtils;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
@@ -16,6 +15,17 @@ import java.util.List;
 import java.util.Set;
 
 public class OntologyMerger {
+
+    public static void main(String[] args) throws OWLOntologyCreationException {
+
+        OntologyMerger merger = new OntologyMerger();
+
+        OWLOntology ontology1 = merger.getOntology("testOntology1.owl");
+        OWLOntology ontology2 = merger.getOntology("testOntology2.owl");
+
+        merger.readSubClasses(ontology1);
+
+    }
 
     //Import ontology to program
     public OWLOntology getOntology(String ontologyName) throws OWLOntologyCreationException {
@@ -57,17 +67,6 @@ public class OntologyMerger {
         ontologies.add(sourceOntology);
         ontologies.add(destOntology);
         return ontologies;
-    }
-
-    public static void main(String[] args) throws OWLOntologyCreationException {
-
-        OntologyMerger merger = new OntologyMerger();
-
-        OWLOntology ontology1 = merger.getOntology("testOntology1.owl");
-        OWLOntology ontology2 = merger.getOntology("testOntology2.owl");
-
-        merger.readSubClasses(ontology1);
-
     }
 
 }
