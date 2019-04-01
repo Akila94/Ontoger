@@ -16,5 +16,13 @@ public class CommonConstants {
     public static final String WORDNET_URL = "https://www.synonym.com/synonyms/";
     public static final String SOURCE_ONTOLOGY_FILE_NAME = "testOnto2V1.owl";
     public static final String DEST_ONTOLOGY_FILE_NAME = "testOnto1V1.owl";
-
+    public static final String REL_SIM = "similar";
+    public static final String REL_SYN = "synonym";
+    public static final String REL_HYP = "hypernym";
+    public static final String REL_HYPO = "hyponym";
+    public static final String REL_PART_OF = "partOf";
+    public static final String REL_COMPRISE = "comprise";
+    public static final String STAT_MERGED = "merged";
+    public static final String STAT_PENDING = "pending";
+    public static final String STAT_NOT_MERGED = "notMerged";
 }

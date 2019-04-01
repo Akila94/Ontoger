@@ -49,4 +49,48 @@ public class Utils {
         }
         return Collections.max(list);
     }
+
+    /**
+     * This method determines whether a given string is a single word or a multi word
+     * The separators considered are _, -, and +.
+     * CamelCase words are also determined.
+     *
+     * @param s The string to be determined
+     * @return Returns true if the string is multi word
+     */
+    public static boolean isMultiWord(String s) {
+        boolean returnValue;
+        if (!s.contains("_") && !s.contains("-") && !s.contains("+")) {
+            returnValue = false;
+        } else {
+            returnValue = true;
+        }
+        return returnValue;
+    }
+
+    /**
+     * Determines a string is multi worded of not
+     *
+     * @param s String to be determined
+     * @return True if multiword, false if single word
+     */
+    public static boolean isMultiWordString(String s) {
+        //Detect camel case strings and split into words
+        String words = s.replaceAll(
+                String.format("%s|%s|%s",
+                        "(?<=[A-Z])(?=[A-Z][a-z])",
+                        "(?<=[^A-Z])(?=[A-Z])",
+                        "(?<=[A-Za-z])(?=[^A-Za-z])"
+                ),
+                " "
+        );
+        if (words.contains(" "))
+            return true;
+        else
+            return false;
+    }
+
+    public static String getShortName(String s) {
+        return s.substring(s.lastIndexOf("#") + 1);
+    }
 }
